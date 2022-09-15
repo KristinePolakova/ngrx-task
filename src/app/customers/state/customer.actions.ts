@@ -1,6 +1,6 @@
-// import { Action } from "@ngrx/store";
+import { Action } from "@ngrx/store";
 
-// import { Customer } from "../customer.model";
+import { Customer } from "../customer.model";
 
 export enum CustomerActionTypes {
   LOAD_CUSTOMERS = "[Customer] Load Customers",
@@ -8,26 +8,20 @@ export enum CustomerActionTypes {
   LOAD_CUSTOMERS_FAIL = "[Customer] Load Customers Fail"
 }
 
-// export class LoadCustomers implements Action {
-//   readonly type = CustomerActionTypes.LOAD_CUSTOMERS;
-// }
+export class LoadCustomers implements Action {
+  readonly type = CustomerActionTypes.LOAD_CUSTOMERS;
+}
 
-// export class LoadCustomersSuccess implements Action {
-//   readonly type = CustomerActionTypes.LOAD_CUSTOMERS_SUCCESS;
+export class LoadCustomersSuccess implements Action {
+  readonly type = CustomerActionTypes.LOAD_CUSTOMERS_SUCCESS;
 
-//   constructor(public payload: Customer[]) {}
-// }
+  constructor(public payload: Customer[]) { }
+}
 
-// export class LoadCustomersFail implements Action {
-//   readonly type = CustomerActionTypes.LOAD_CUSTOMERS_FAIL;
+export class LoadCustomersFail implements Action {
+  readonly type = CustomerActionTypes.LOAD_CUSTOMERS_FAIL;
 
-//   constructor(public payload: string) {}
-// }
+  constructor(public payload: string) { }
+}
 
-// export type Action = LoadCustomers | LoadCustomersSuccess | LoadCustomersFail;
-
-import { createAction, props } from '@ngrx/store';
-
-export const loadCustomers = createAction(
-  '[Customer] Load Customers'
-);
+export type CustomerAction = LoadCustomers | LoadCustomersSuccess | LoadCustomersFail;
