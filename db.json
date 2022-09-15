@@ -1,4 +1,5 @@
- "customers": [
+{
+  "customers": [
     {
       "name": "John Doe",
       "phone": "910928392098",
@@ -15,8 +16,3 @@
     }
   ]
 }
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Pr
