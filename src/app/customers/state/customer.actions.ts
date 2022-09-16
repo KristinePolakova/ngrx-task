@@ -1,5 +1,4 @@
 import { Action } from "@ngrx/store";
-import { Update } from '@ngrx/entity';
 import { Customer } from "../customer.model";
 
 export enum CustomerActionTypes {

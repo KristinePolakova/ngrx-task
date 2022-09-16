@@ -1,8 +1,6 @@
 import * as customerActions from "./customer.actions";
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-
 import { EntityState, EntityAdapter, createEntityAdapter } from "@ngrx/entity";
-
 import { Customer } from "../customer.model";
 import * as fromRoot from "../../state/app-state";
 

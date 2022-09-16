@@ -8,7 +8,7 @@
       "id": 1
     },
     {
-      "name": "Philip Moris",
+      "name": "Ryan Gosling",
       "phone": "910928392098",
       "address": "23 Morrning Street",
       "membership": "Pro",
@@ -29,11 +29,18 @@
       "id": 4
     },
     {
-      "name": "Mary Johnson",
+      "name": "Charlie Chaplin",
       "phone": "910928392098",
-      "address": "893 Main Voulevard",
-      "membership": "Pro",
+      "address": "31 Rain Street",
+      "membership": "Basic",
       "id": 5
+    },
+    {
+      "name": "Anna Doe",
+      "phone": "910928392098",
+      "address": "32 Evening Street",
+      "membership": "Basic",
+      "id": 6
     }
   ]
 }
