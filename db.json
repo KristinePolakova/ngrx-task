@@ -1,22 +1,30 @@
- "customers": [
+ {"customers": [
     {
-      "name": "John Doe",
+      "name": "John Appleseed",
       "phone": "910928392098",
       "address": "123 Sun Street",
       "membership": "Platinum",
       "id": 1
     },
     {
-      "name": "Mary Johnson",
+      "name": "Donald Trump",
       "phone": "808937482734",
-      "address": "893 Main Voulevard",
+      "address": "893 Main Boulevard",
       "membership": "Pro",
       "id": 2
+    },
+    {
+      "name": "Bill Clinton",
+      "phone": "54668465468746",
+      "address": "36 Wall Street",
+      "membership": "Platinum",
+      "id": 3
+    },
+    {
+      "name": "Leonardo di Caprio",
+      "phone": "684654658461",
+      "address": "78 Melrose Boulevard",
+      "membership": "Pro",
+      "id": 4
     }
-  ]
-}
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Pr
+  ]}
