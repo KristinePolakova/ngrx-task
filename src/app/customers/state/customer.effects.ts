@@ -1,9 +1,12 @@
+import { provideCloudinaryLoader } from "@angular/common";
 import { Injectable } from "@angular/core";
-import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { EMPTY } from "rxjs";
-import { map, mergeMap, catchError } from "rxjs/operators";
+import { Actions, createEffect, Effect, ofType } from "@ngrx/effects";
+import { Action } from "@ngrx/store";
+import { EMPTY, Observable, of } from "rxjs";
+import { map, mergeMap, catchError, exhaustMap, concatMap } from "rxjs/operators";
 import { CustomerService } from "../customer.service";
-
+import * as customerActions from "../state/customer.actions";
+import { Customer } from "../customer.model";
 
 @Injectable()
 export class CustomerEffect {
@@ -26,7 +29,7 @@ export class CustomerEffect {
 
     loadCustomers$ = createEffect(() => this.actions$.pipe(
         ofType('[Customer] Load Customers'),
-        mergeMap(() => this.customerService.getCustomers()
+        exhaustMap(() => this.customerService.getCustomers()
             .pipe(
                 map(customers => ({
                     type: '[Customer] Load Customers Success',
@@ -34,8 +37,21 @@ export class CustomerEffect {
                 })),
                 catchError(() => EMPTY)
             ))
-    ))
+    ));
 
+    @Effect()
+    deleteCustomer$: Observable<Action> = this.actions$.pipe(
+        ofType<customerActions.DeleteCustomer>(
+            customerActions.CustomerActionTypes.DELETE_CUSTOMER
+        ),
+        map((action: customerActions.DeleteCustomer) => action.payload),
+        mergeMap((id: number) =>
+            this.customerService.deleteCustomer(id).pipe(
+                map(() => new customerActions.DeleteCustomerSuccess(id)),
+                catchError(err => of(new customerActions.DeleteCustomerFail(err)))
+            )
+        )
+    );
     constructor(
         private actions$: Actions,
         private customerService: CustomerService
