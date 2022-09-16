@@ -1,18 +1,46 @@
 {
   "customers": [
     {
-      "name": "John Doe",
+      "name": "Ally Shoe",
       "phone": "910928392098",
-      "address": "123 Sun Street",
-      "membership": "Platinum",
+      "address": "12 Night Street",
+      "membership": "Basic",
       "id": 1
     },
     {
-      "name": "Mary Johnson",
-      "phone": "808937482734",
-      "address": "893 Main Voulevard",
+      "name": "Ryan Gosling",
+      "phone": "910928392098",
+      "address": "23 Morrning Street",
       "membership": "Pro",
       "id": 2
+    },
+    {
+      "name": "Elisabeth Ryan",
+      "phone": "910928392098",
+      "address": "1 Downtown Street",
+      "membership": "Platinum",
+      "id": 3
+    },
+    {
+      "name": "John Doe",
+      "phone": "910928392098",
+      "address": "123 Sun Street",
+      "membership": "Basic",
+      "id": 4
+    },
+    {
+      "name": "Charlie Chaplin",
+      "phone": "910928392098",
+      "address": "31 Rain Street",
+      "membership": "Basic",
+      "id": 5
+    },
+    {
+      "name": "Anna Doe",
+      "phone": "910928392098",
+      "address": "32 Evening Street",
+      "membership": "Basic",
+      "id": 6
     }
   ]
 }

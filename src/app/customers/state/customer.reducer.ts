@@ -1,8 +1,6 @@
 import * as customerActions from "./customer.actions";
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-
 import { EntityState, EntityAdapter, createEntityAdapter } from "@ngrx/entity";
-
 import { Customer } from "../customer.model";
 import * as fromRoot from "../../state/app-state";
 
@@ -35,12 +33,6 @@ export function customerReducer(
   action: customerActions.CustomerAction
 ): CustomerState {
   switch (action.type) {
-    case customerActions.CustomerActionTypes.LOAD_CUSTOMERS: {
-      return {
-        ...state,
-        loading: true
-      };
-    }
     case customerActions.CustomerActionTypes.LOAD_CUSTOMERS_SUCCESS: {
       return customerAdapter.setAll(action.payload, {
         ...state,
@@ -54,6 +46,16 @@ export function customerReducer(
         entities: {},
         loading: false,
         loaded: false,
+        error: action.payload
+      };
+    }
+
+    case customerActions.CustomerActionTypes.DELETE_CUSTOMER_SUCCESS: {
+      return customerAdapter.removeOne(action.payload, state);
+    }
+    case customerActions.CustomerActionTypes.DELETE_CUSTOMER_FAIL: {
+      return {
+        ...state,
         error: action.payload
       };
     }
@@ -87,3 +89,5 @@ export const getError = createSelector(
   getCustomerFeatureState,
   (state: CustomerState) => state.error
 );
+
+
